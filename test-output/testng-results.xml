@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-23T15:23:29 ICT" name="Default suite" finished-at="2025-02-23T15:23:36 ICT" duration-ms="7666">
+  <suite started-at="2025-02-23T18:29:42 ICT" name="Default suite" finished-at="2025-02-23T18:29:52 ICT" duration-ms="10010">
     <groups>
     </groups>
-    <test started-at="2025-02-23T15:23:29 ICT" name="Default test" finished-at="2025-02-23T15:23:36 ICT" duration-ms="7666">
-      <class name="NguyenTuanTai.add_user_feature">
-        <test-method is-config="true" signature="lauchBrowser()[pri:0, instance:NguyenTuanTai.add_user_feature@5df417a7]" started-at="2025-02-23T15:23:29 ICT" name="lauchBrowser" finished-at="2025-02-23T15:23:36 ICT" duration-ms="7378" status="PASS">
+    <test started-at="2025-02-23T18:29:42 ICT" name="Default test" finished-at="2025-02-23T18:29:52 ICT" duration-ms="10010">
+      <class name="scheme.addScheme">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:scheme.addScheme@72f46e16]" started-at="2025-02-23T18:29:42 ICT" name="launchBrowser" finished-at="2025-02-23T18:29:45 ICT" duration-ms="3044" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- lauchBrowser -->
-        <test-method signature="login()[pri:0, instance:NguyenTuanTai.add_user_feature@5df417a7]" started-at="2025-02-23T15:23:36 ICT" name="login" finished-at="2025-02-23T15:23:36 ICT" duration-ms="217" status="PASS">
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="login()[pri:0, instance:scheme.addScheme@72f46e16]" started-at="2025-02-23T18:29:45 ICT" name="login" finished-at="2025-02-23T18:29:46 ICT" duration-ms="1586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-      </class> <!-- NguyenTuanTai.add_user_feature -->
+        <test-method signature="Scheme()[pri:0, instance:scheme.addScheme@72f46e16]" started-at="2025-02-23T18:29:46 ICT" name="Scheme" finished-at="2025-02-23T18:29:52 ICT" depends-on-methods="scheme.addScheme.login" duration-ms="5193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Scheme -->
+      </class> <!-- scheme.addScheme -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

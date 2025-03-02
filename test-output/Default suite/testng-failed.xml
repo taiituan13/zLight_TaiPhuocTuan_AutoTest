@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="NguyenTuanTai.html_features">
+      <class name="scheme.addScheme">
         <methods>
-          <include name="lauchBrowser"/>
-          <include name="KiemThuSoSanhTieuDe"/>
+          <include name="launchBrowser"/>
+          <include name="login"/>
+          <include name="Scheme"/>
         </methods>
-      </class> <!-- NguyenTuanTai.html_features -->
+      </class> <!-- scheme.addScheme -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
