@@ -53,13 +53,47 @@ public class add_user_feature {
     @Test(dependsOnMethods = "login")
     public void addUser() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
+    
         // Chờ User Tab được thêm vào DOM & hiển thị
         WebElement userTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[3]/span[2]/span")));
         userTab.click();
-
+    
         // Chờ nút "Add User" xuất hiện rồi click
         WebElement addUserButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//main//button")));
         addUserButton.click();
+    
+        // Nhập tên người dùng
+        WebElement fullNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[1]/div/div[2]/div/div/input")));
+        fullNameInput.sendKeys("Nguyen Van A");
+    
+        // Nhập tên đăng nhập
+        WebElement userNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[1]/div/div[2]/div/div/input")));
+        userNameInput.sendKeys("nguyenvana");
+    
+        // Nhập mật khẩu
+        WebElement passwordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[2]/div/div[2]/div/div/span/input")));
+        passwordInput.sendKeys("password123");
+    
+        // Nhập tên đăng nhập web IOT
+        WebElement iotUserNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[3]/div/div[2]/div/div/input")));
+        iotUserNameInput.sendKeys("iotuser");
+    
+        // Nhập mật khẩu web IOT
+        WebElement iotPasswordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[4]/div/div[2]/div/div/span/input")));
+        iotPasswordInput.sendKeys("iotpassword123");
+
+        // Chọn quyền
+    WebElement roleSelect = driver.findElement(By.id("userRoles"));
+    roleSelect.sendKeys("admin");
+
+    // Chọn đơn vị
+    WebElement unitSelect = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[4]/div[1]/div[2]/div[1]/div/div/div/span/span[1]/input")));
+    unitSelect.sendKeys("123");
+    
+
+    
+        // Nhấn nút thêm người dùng
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/button")));
+        submitButton.click();
     }
 }
