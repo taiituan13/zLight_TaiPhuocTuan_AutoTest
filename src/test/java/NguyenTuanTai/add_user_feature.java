@@ -50,8 +50,9 @@ public class add_user_feature {
         wait.until(ExpectedConditions.urlContains("device-map"));
     }
 
-    @Test(dependsOnMethods = "login")
+    @Test
     public void addUser() {
+        login();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     
         // Chờ User Tab được thêm vào DOM & hiển thị
@@ -72,23 +73,27 @@ public class add_user_feature {
     
         // Nhập mật khẩu
         WebElement passwordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[2]/div/div[2]/div/div/span/input")));
-        passwordInput.sendKeys("password123");
+        passwordInput.sendKeys("Password123");
     
         // Nhập tên đăng nhập web IOT
         WebElement iotUserNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[3]/div/div[2]/div/div/input")));
         iotUserNameInput.sendKeys("iotuser");
-    
-        // Nhập mật khẩu web IOT
-        WebElement iotPasswordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[4]/div/div[2]/div/div/span/input")));
-        iotPasswordInput.sendKeys("iotpassword123");
+         // Nhập mật khẩu web IOT
+         WebElement iotPasswordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[2]/div[4]/div/div[2]/div/div/span/input")));
+         iotPasswordInput.sendKeys("iotpassword123");
+         // Nhấn nút phân quyền
+           // Tìm và nhấp vào thành phần Select để mở dropdown\
+        
+        WebElement selectElement = driver.findElement(By.className("ant-select-selection-wrap"));
+        selectElement.click();
 
-        // Chọn quyền
-    WebElement roleSelect = driver.findElement(By.id("userRoles"));
-    roleSelect.sendKeys("admin");
-
-    // Chọn đơn vị
-    WebElement unitSelect = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[4]/div[1]/div[2]/div[1]/div/div/div/span/span[1]/input")));
-    unitSelect.sendKeys("123");
+        // Chờ dropdown xuất hiện và chọn một tùy chọn
+        WebElement dropdownOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'ant-select-item') and text()='Tên_tùy_chọn']")));
+        dropdownOption.click();
+;
+        // Chọn đơn vị
+        WebElement unitSelect = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[4]/div[1]/div[2]/div[1]/div/div/div/span/span[1]/input")));
+        unitSelect.sendKeys("123");
     
 
     
