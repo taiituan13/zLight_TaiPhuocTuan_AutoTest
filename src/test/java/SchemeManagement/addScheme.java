@@ -55,7 +55,7 @@ public class addScheme {
     public void Scheme() throws InterruptedException {
          login();
         String schemeName = "kehoach1";
-        String filePath = "/home/tuantai/Downloads/Book1.xlsx"; // Đổi thành đường dẫn file thực tế
+        String filePath = "C:\\Users\\84949\\Downloads\\KiemTra.docx";// Đổi thành đường dẫn file thực tế
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -96,6 +96,12 @@ public class addScheme {
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", createScheme);
 
+
+
+
+
+        
+
         // Kiểm tra nếu có thông báo thành công
         WebElement toastMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Toastify__toast--success")));
         String toastText = toastMessage.getText();
@@ -103,5 +109,15 @@ public class addScheme {
 
 
         System.out.println("Scheme added successfully!");
+
+        
+
+
+        
+
+
+
+
+
     }
 }
