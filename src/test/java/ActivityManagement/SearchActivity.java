@@ -106,8 +106,7 @@ public class SearchActivity {
                         }
                 }
 
-                // Assert.assertTrue(found, "Không tìm thấy kết quả phù hợp với từ khóa tìm
-                // kiếm");
+                // Assert.assertTrue(found, "Không tìm thấy kết quả phù hợp với từ khóa tìm kiếm");
         }
 
         @AfterTest
