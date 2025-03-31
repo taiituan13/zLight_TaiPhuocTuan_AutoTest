@@ -112,7 +112,7 @@ public class add_user_feature {
         // Nhấn nút thêm người dùng
         WebElement submitButton = wait.until(ExpectedConditions
         .elementToBeClickable(By.xpath("/html/body/div[2]/div/div[2]/div/div[1]/div/div[2]/form/button")));
-        // submitButton.click();
+        submitButton.click();
 
     }
 
