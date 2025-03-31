@@ -102,7 +102,6 @@ public class add_edit_delete {
 
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", createScheme);
 
-
                 // click vao chinh sua chi tiet
                 WebElement edit = wait.until(
                                 ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -115,12 +114,16 @@ public class add_edit_delete {
 
                 //
 
+                Thread.sleep(1000);
+                // Chờ phần tử xuất hiện trong DOM
+                WebElement test1 = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                                By.xpath("/html/body/div[3]/div/div[3]/div/div[2]/div/div[1]/ul/li[1]/span")));
 
-                        WebElement test1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div[3]/div/div[2]/div/div[1]/ul/li[1]/span/div")));
+                // Chờ phần tử hiển thị hoàn toàn (Tránh lỗi bị che hoặc chưa render)
+                wait.until(ExpectedConditions.visibilityOf(test1));
+
+                // Click phần tử
                 test1.click();
-                
-                        
-
                 // Kiểm tra nếu có thông báo thành công
                 WebElement toastMessage = wait.until(ExpectedConditions
                                 .visibilityOfElementLocated(By.className("Toastify__toast--success")));
